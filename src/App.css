@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300&family=Fraunces:wght@900&display=swap');
+
+@font-face {
+  font-family: 'Paladise';
+  src: local('Paladise'), url(./fonts/Paladise.ttf) format('truetype');
+}
+
+h1,
+h4 {
+  font-family: 'Fraunces';
+}
+
+.Fraunces_font{
+  font-family: 'Fraunces';
+}
+
+.unlink{
+  text-decoration: none;
+}
+
+.top_margin {
+  margin-top: 1%;
+}
+
+.dark_pink {
+  color: #d0006e;
+}
+
+.hot_pink{
+  color: #ff78b4;
+}
+
+.font_black{
+  color: black;
+}
+
+#title_link:hover{
+  color:
+   #7289f5;
+  /* #ff78b4; */
+  cursor:pointer;
+
+  /* Below code for gradient title */
+  /* background: linear-gradient(to right, #ff78b4 0%, #7289f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+hr {
+  margin: auto 420px
+}
+
+/* #d0006e: dark pink */
+/* #ff78b4: hot pink */
+/* #7289f5: cornflour blue */
