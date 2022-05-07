@@ -7,6 +7,7 @@ import BlogView from './components/BlogView';
 import welcome_img from "./static/images/home_welcome_svg.svg";
 import Astronaut_svg from "./static/images/Astronaut_svg.svg";
 import BlogList from './components/BlogList';
+import ReadBlog from './components/ReadBlog';
 
 function Home() {
   return (
@@ -19,6 +20,10 @@ function Home() {
           </Col>
         </Row>
 
+        
+          <ReadBlog />
+        
+        {/* BlogList Row commented  */}
         {/* <Row>
           <Image
             className='mt-3 mb-4'
@@ -28,7 +33,7 @@ function Home() {
           <BlogList />
         </Row>
    */}
-  
+
       </Container>
     </>
   );

@@ -30,6 +30,37 @@ h4 {
   color: #ff78b4;
 }
 
+#hot_pink_btn{
+  background-color: #ff78b4;
+  outline: none;
+}
+.bg_pink{
+  /* background-color: #000000; */
+  background: #000000;
+  color: white;
+  border-radius: 0.6em;
+  overflow: auto;
+}
+
+.rounded_border{
+  border-radius: 0.6em;
+}
+
+/* hr {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  } */
+
+#newsletter_block{
+  background-color: #000000;
+  color: white;
+}
+
+.affix{
+  position: fixed;
+}
+
 .font_black{
   color: black;
 }
@@ -46,10 +77,26 @@ h4 {
   -webkit-text-fill-color: transparent; */
 }
 
-hr {
-  margin: auto 420px
+.center_content{
+  text-align: center;
 }
 
+.img_responsive {
+  width: 100%;
+  height: auto;
+}
+
+.justify_content{
+  text-align: justify;
+}
+
+#fixed_col{
+  position: fixed;
+}
+
+p{
+  font-size: 1em;
+}
 /* #d0006e: dark pink */
 /* #ff78b4: hot pink */
 /* #7289f5: cornflour blue */
