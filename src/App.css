@@ -10,11 +10,15 @@ h4 {
   font-family: 'Fraunces';
 }
 
-.Fraunces_font{
+.Fraunces_font {
   font-family: 'Fraunces';
 }
 
-.unlink{
+.Paladise_font {
+  font-family: 'Paladise';
+}
+
+.unlink {
   text-decoration: none;
 }
 
@@ -26,50 +30,45 @@ h4 {
   color: #d0006e;
 }
 
-.hot_pink{
+.hot_pink {
   color: #ff78b4;
 }
 
-#hot_pink_btn{
+#hot_pink_btn {
   background-color: #ff78b4;
   outline: none;
+  box-shadow: none;
 }
-.bg_pink{
-  /* background-color: #000000; */
+
+.bg_pink {
   background: #000000;
   color: white;
   border-radius: 0.6em;
   overflow: auto;
 }
 
-.rounded_border{
+.rounded_border {
   border-radius: 0.6em;
 }
 
-/* hr {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  } */
-
-#newsletter_block{
+#newsletter_block {
   background-color: #000000;
   color: white;
 }
 
-.affix{
+.affix {
   position: fixed;
 }
 
-.font_black{
+.font_black {
   color: black;
 }
 
-#title_link:hover{
+#title_link:hover {
   color:
-   #7289f5;
-  /* #ff78b4; */
-  cursor:pointer;
+    /* #7289f5; */
+    #ff78b4;
+  cursor: pointer;
 
   /* Below code for gradient title */
   /* background: linear-gradient(to right, #ff78b4 0%, #7289f5 100%);
@@ -77,7 +76,7 @@ h4 {
   -webkit-text-fill-color: transparent; */
 }
 
-.center_content{
+.center_content {
   text-align: center;
 }
 
@@ -86,16 +85,65 @@ h4 {
   height: auto;
 }
 
-.justify_content{
+.justify_content {
   text-align: justify;
 }
 
-#fixed_col{
+#fixed_col {
   position: fixed;
 }
 
-p{
+p {
   font-size: 1em;
+}
+
+#transparent_list_item {
+  background-color: #c2dfda;
+  color: #000000;
+}
+
+#transparent_list_item:hover {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+}
+
+.border_div {
+  border-style: outset;
+}
+
+.no_top_margin_no_padding {
+  margin-top: 0px;
+  padding: 0%;
+}
+
+/* .modal-backdrop {
+  background-color: transparent !important;
+} */
+
+#popup_part {
+  opacity: 1 !important;
+  background-color: #7289f5 !important;
+  color: white;
+}
+
+#blue_btn {
+  background-color: #7289f5;
+  outline: none;
+  box-shadow: none;
+}
+
+.validation_error {
+  color: red;
+}
+
+#no_bgrndcol{
+  background-color: transparent !important;
+}
+
+.transparent-input {
+  background-color: transparent !important;
+  border: 1em solid black;
 }
 /* #d0006e: dark pink */
 /* #ff78b4: hot pink */

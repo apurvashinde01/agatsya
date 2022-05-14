@@ -8,8 +8,13 @@ import welcome_img from "./static/images/home_welcome_svg.svg";
 import Astronaut_svg from "./static/images/Astronaut_svg.svg";
 import BlogList from './components/BlogList';
 import ReadBlog from './components/ReadBlog';
+import CreateBlog from './components/CreateBlog';
+import SignUp from './components/SignUp';
+import Settings from './components/Settings';
+import Profile from './components/Profile';
 
 function Home() {
+
   return (
     <>
       <Container>
@@ -20,9 +25,13 @@ function Home() {
           </Col>
         </Row>
 
-        
-          <ReadBlog />
-        
+        {/* <Profile /> */}
+        {/* <Settings /> */}
+        {/* <SignUp/> */}
+        {/* <CreateBlog /> */}
+
+        {/* <ReadBlog /> */}
+
         {/* BlogList Row commented  */}
         {/* <Row>
           <Image
@@ -31,8 +40,8 @@ function Home() {
             src={Astronaut_svg} />
 
           <BlogList />
-        </Row>
-   */}
+        </Row> */}
+
 
       </Container>
     </>

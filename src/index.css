@@ -4,3 +4,6 @@
   /* #d7e3e1; -> mint green */
   font-family: 'Commissioner', sans-serif;
 }
+
+/* To fix horizontal scrollbar that appears */
+body{ overflow-x: hidden;}
