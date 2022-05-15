@@ -24,10 +24,11 @@ function SignOut() {
                         <Button
                             onClick={() => directToSignIn()}
                             size="lg"
-                            className='mt-2' variant="outline-dark" id="hot_pink_btn">SignIn Again!</Button>
+                            className='mt-1' variant="outline-dark" id="hot_pink_btn">SignIn Again!</Button>
                     </div>
                 </div>
             </Row>
+            <br />
         </>
     )
 }
