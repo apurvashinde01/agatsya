@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/apurvashinde01/agatsya/static/css/main.501ddacd.css",
+    "main.js": "/apurvashinde01/agatsya/static/js/main.e8fd103b.js",
+    "static/js/787.61ff4af9.chunk.js": "/apurvashinde01/agatsya/static/js/787.61ff4af9.chunk.js",
+    "static/media/profile.png": "/apurvashinde01/agatsya/static/media/profile.0d4af9409ab91fa72fe4.png",
+    "static/media/protected_route.gif": "/apurvashinde01/agatsya/static/media/protected_route.ae2e2d340ed96881da16.gif",
+    "static/media/signupcta.gif": "/apurvashinde01/agatsya/static/media/signupcta.dd7ebac51608d16a10ed.gif",
+    "static/media/reg_success.gif": "/apurvashinde01/agatsya/static/media/reg_success.51214ade17b1655cc204.gif",
+    "static/media/heaven-delight.jpg": "/apurvashinde01/agatsya/static/media/heaven-delight.bd31bd07acf08ed4a87f.jpg",
+    "static/media/Paladise.ttf": "/apurvashinde01/agatsya/static/media/Paladise.90a42378091294242ee1.ttf",
+    "static/media/newsletter.svg": "/apurvashinde01/agatsya/static/media/newsletter.0112a786a21cb51166279ce55c123459.svg",
+    "static/media/home_welcome_svg.svg": "/apurvashinde01/agatsya/static/media/home_welcome_svg.e264e51e573c66690fd1cac163aa1b97.svg",
+    "static/media/404.svg": "/apurvashinde01/agatsya/static/media/404.10eee2563c8758417d623d8d827a8fea.svg",
+    "static/media/signup.svg": "/apurvashinde01/agatsya/static/media/signup.01668fbd96285924090367afd0f3a572.svg",
+    "static/media/signin.svg": "/apurvashinde01/agatsya/static/media/signin.a9d1fcd3fb07ce31a1707ce9f5798dfd.svg",
+    "static/media/upload.svg": "/apurvashinde01/agatsya/static/media/upload.a0ec3ccf2edfd22e67b234a544b0195a.svg",
+    "static/media/Astronaut_svg.svg": "/apurvashinde01/agatsya/static/media/Astronaut_svg.bc754a5b8a10c14e55a192ab1196a76d.svg",
+    "static/media/signout.svg": "/apurvashinde01/agatsya/static/media/signout.e3168cacf18b5ab56d8975e725196b11.svg",
+    "static/media/write_blog.svg": "/apurvashinde01/agatsya/static/media/write_blog.3bef222dff34d95a11ad796ea545e3a5.svg",
+    "index.html": "/apurvashinde01/agatsya/index.html",
+    "main.501ddacd.css.map": "/apurvashinde01/agatsya/static/css/main.501ddacd.css.map",
+    "main.e8fd103b.js.map": "/apurvashinde01/agatsya/static/js/main.e8fd103b.js.map",
+    "787.61ff4af9.chunk.js.map": "/apurvashinde01/agatsya/static/js/787.61ff4af9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.501ddacd.css",
+    "static/js/main.e8fd103b.js"
+  ]
+}
