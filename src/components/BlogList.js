@@ -21,9 +21,6 @@ function BlogList({ bloglist }) {
                 <h6>No blogs found...</h6>
               )
           }
-          {/* <BlogView />
-          <BlogView />
-          <BlogView /> */}
         </Col>
 
         <Col xl={2} lg={2} md={1} sm={1} xs={1} >

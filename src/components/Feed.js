@@ -1,25 +1,44 @@
 import React from 'react'
+import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import BlogList from './BlogList';
-import NoRoute404 from './NoRoute404';
+import Trending from './Trending';
 
 function Feed() {
 
     // fetch blogs from state
-    const blogs = useSelector(state => state.blogs);
+    var blogs = useSelector(state => state.blogs);
     const login_session = useSelector(state => state.login_session);
+    const navigate = useNavigate();
+
+    blogs = blogs.filter(obj => {
+        return obj.author !== login_session.username;
+    });
+
+    const directToCreateBlog = () => {
+        navigate('/create');
+    }
 
     return (
         <>
             {
                 login_session.logged_in ? (
                     <>
-                        <h1 className='center_content'>Trending blogs</h1>
+                        <div class="row justify-content-center">
+                            <div className='col-2'>
+                                <Button
+                                    onClick={() => directToCreateBlog()}
+                                    className='center_content'
+                                    variant="outline-dark" id="hot_pink_btn">New Blog</Button>
+                            </div>
+                        </div>
                         <BlogList bloglist={blogs} />
                     </>
 
                 ) : (
-                    <NoRoute404 />
+                    // <NoRoute404 />
+                    <Trending />
                 )
             }
 

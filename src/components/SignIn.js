@@ -4,7 +4,7 @@ import signin from "../static/images/signin.svg";
 import './signup.css';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function SignIn() {
 
@@ -17,6 +17,7 @@ function SignIn() {
     // fetch all users from store
     const users = useSelector(state => state.users);
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
@@ -24,20 +25,22 @@ function SignIn() {
         var user_email = data.email;
         var user_pwd = data.Password;
         var bool_signinsuccess;
+        var new_user;
 
-        console.log(user_email, user_pwd);
+        // console.log(user_email, user_pwd);
 
         for (let index = 0; index < users.length; index++) {
             const element = users[index];
-            console.log(element);
+            // console.log(element);
 
             if ((element.email.toString()).localeCompare(user_email.toString()) == 0) {
-                console.log('email found')
+                // console.log('email found')
                 if ((element.pwd.toString()).localeCompare(user_pwd.toString()) == 0) {
-                    console.log('pwd matched')
+                    // console.log('pwd matched')
                     setsigninSuccess(true);
                     setshowsigninError(false);
                     bool_signinsuccess = true;
+                    new_user = element;
                     break;
                 }
             }
@@ -47,6 +50,11 @@ function SignIn() {
             setsigninError("SignIn failed!");
             setshowsigninError(true);
             setsigninSuccess(false);
+        }
+        else {
+            // console.log(new_user);
+            dispatch({ type: "SIGNIN_USER", user: new_user });
+            navigate('/feed');
         }
 
     }
@@ -83,8 +91,8 @@ function SignIn() {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <h1>Email</h1>
-                        <input type='email' 
-                        className='input_field' {...register("email", { required: true })} />
+                        <input type='email'
+                            className='input_field' {...register("email", { required: true })} />
 
                         <h1>Password</h1>
                         <input type='Password' className='input_field' {...register("Password", {

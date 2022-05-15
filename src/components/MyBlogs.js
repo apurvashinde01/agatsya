@@ -6,6 +6,9 @@ import CreateBlog from './CreateBlog';
 
 function MyBlogs() {
 
+    // fetch login session data
+    const login_session = useSelector(state => state.login_session);
+
     // default view: drafts
     const [SwitchView, setSwitchView] = useState('drafts');
 
@@ -14,7 +17,11 @@ function MyBlogs() {
     }
 
     // fetch blogs from state
-    const blogs = useSelector(state => state.blogs);
+    var blogs = useSelector(state => state.blogs);
+
+    blogs = blogs.filter(obj => {
+        return obj.author === login_session.username;
+    });
 
     const drafts = blogs.filter(obj => {
         return obj.status === 'drafts';
@@ -50,11 +57,6 @@ function MyBlogs() {
                 )
                     :
                     null
-                // (
-                //     <>
-                //         <h3 className='center_content'>No Drafts yet, Click on New Blog to start blogging!</h3>
-                //     </>
-                // )
             }
 
             {
@@ -62,18 +64,11 @@ function MyBlogs() {
                     <>
                         <br />
                         <h3 className='center_content'>Published</h3>
-                        <BlogList bloglist={published} />
+                        <BlogList  bloglist={published} />
                     </>
                 )
                     :
                     null
-
-                // (
-                //     <>
-                //         <br />
-                //         <h3 className='center_content'>No Published blogs yet, publish existing drafts!</h3>
-                //     </>
-                // )
             }
 
             {
@@ -85,12 +80,6 @@ function MyBlogs() {
                 )
                     :
                     null
-                // (
-                //     <>
-                //         <br />
-                //         <h3 className='center_content'>Trouble creating blog...</h3>
-                //     </>
-                // )
             }
         </>
     )

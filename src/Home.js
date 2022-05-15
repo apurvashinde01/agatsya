@@ -12,6 +12,7 @@ import CreateBlog from './components/CreateBlog';
 import SignUp from './components/SignUp';
 import Settings from './components/Settings';
 import Profile from './components/Profile';
+import Credits from './components/Credits';
 
 function Home() {
 
@@ -25,25 +26,8 @@ function Home() {
           </Col>
         </Row>
 
-        {/* <Profile /> */}
-        {/* <Settings /> */}
-        {/* <SignUp/> */}
-        {/* <CreateBlog /> */}
-
-        {/* <ReadBlog /> */}
-
-        {/* BlogList Row commented  */}
-        {/* <Row>
-          <Image
-            className='mt-3 mb-4'
-            height={'300em'}
-            src={Astronaut_svg} />
-
-          <BlogList />
-        </Row> */}
-
-
       </Container>
+      
     </>
   );
 }

@@ -19,8 +19,8 @@ function SignUp() {
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
-        console.log(data);
-        if (data) {
+        // console.log(data);
+        if (!data) {
 
             // If signup fails
             setshowsignupError(true);
@@ -32,7 +32,7 @@ function SignUp() {
             new_user.email = data.email;
             new_user.pwd = data.Password;
 
-            console.log(new_user);
+            // console.log(new_user);
             dispatch({ type: "CREATE_USER", user: new_user });
 
         }
@@ -63,7 +63,7 @@ function SignUp() {
                     </div>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <h1>Name</h1>
+                        <h1>Username</h1>
                         <input className='input_field' {...register("userName", { required: true })} />
                         <p className='validation_error'>{errors.userName?.type === 'required' && "Username is required"}</p>
 

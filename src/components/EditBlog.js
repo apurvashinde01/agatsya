@@ -1,33 +1,27 @@
 import React, { useState } from 'react'
-import { Image, Row, Button, Form, ButtonGroup, Col, FloatingLabel } from 'react-bootstrap';
+import {
+    ListGroup, ListGroupItem, Row, Col, Image, Button, ButtonGroup, Container
+    , FormControl, InputGroup, Modal, Form
+} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import upload from "../static/images/upload.svg";
+import { useNavigate, useParams } from 'react-router-dom';
 import write_blog from "../static/images/write_blog.svg";
 
-function CreateBlog() {
-    // fetch login session data
-    const login_session = useSelector(state => state.login_session);
+function EditBlog() {
 
+    // fetch id of blog from url
+    const id = useParams().blog_id;
     // dispatch obj creation
     const dispatch = useDispatch();
-
     // fetch all blogs from store
     const blogs = useSelector(state => state.blogs);
-    // console.log(blogs)
-
-    // take blog 1 as ref.
-    const blog = blogs.find(blog => blog.index == 1);
-    const new_index = blogs.length + 1;
-
-    const [Content, setContent] = useState('')
+    // find blog requested based on id
+    const blog = blogs.find(blog => blog.index == id);
+    const [Content, setContent] = useState('');
     const [Title, setTitle] = useState('')
-    const [ImageInput, setImageInput] = useState('')
 
     const navigate = useNavigate();
-
-    const { register, formState: { errors }, handleSubmit } = useForm();
 
     const handleChange = (event) => {
         // console.log(event.target);
@@ -41,47 +35,26 @@ function CreateBlog() {
             case 'content':
                 setContent({ value: event.target.value });
                 break;
-            case 'image':
-                const image = event.target.files[0];
-                // console.log(image)
-                if (image.name.match(/\.(jpg|jpeg|png|gif)$/)) {
-                    // console.log('valid image.');
-                    setImageInput({ value: event.target.files[0] });
-                    return false;
-                }
-
-                break;
             default:
                 break;
         }
     }
 
-    const onSubmit = (status, data) => {
-        // console.log(status, data)
-        // console.log("ooooooooooooooo", blog, new_index);
+    const { register, formState: { errors }, handleSubmit } = useForm();
 
-        const create_blog = {};
-        create_blog.index = new_index;
-        create_blog.author = login_session.username;
-        create_blog.status = status;
-        create_blog.saves = 0;
-        create_blog.likes = 0;
-        create_blog.shares = 0;
+    const onSubmit = (data) => {
 
+        var edited_blog = blog;
         if (typeof Title.value !== "undefined") {
-            create_blog.title = Title.value;
+            edited_blog.title = Title.value;
         }
 
         if (typeof Content.value !== "undefined") {
-            create_blog.content = Content.value;
+            edited_blog.content = Content.value;
         }
 
-        // console.log("dddddddddddd", create_blog);
-        // console.log('ooooooooooooo', blog)
-        // console.log(blogs)
-        dispatch({ type: "CREATE_BLOG", blog: create_blog });
-        // console.log(blogs)
-        navigate('/read/' + new_index);
+        dispatch({ type: "EDIT_BLOG", blog: edited_blog });
+        navigate('/read/' + blog.index);
     }
 
     return (
@@ -96,16 +69,16 @@ function CreateBlog() {
                         height={'300em'}
                         src={write_blog} />
 
-                    <Form className='mb-4'
-                    // onSubmit={handleSubmit(onSubmit)}
-                    >
+                    <Form className='mb-4' onSubmit={handleSubmit(onSubmit)}>
                         <Row>
                             <Col>
                                 <Form.Label>Title</Form.Label>
+
                                 <Form.Control
                                     id="title"
                                     className='transparent-input'
-                                    placeholder="Enter Title here"
+                                    defaultValue={blog.title}
+                                    placeholder="Edit Title here"
                                     {...register("title", {
                                         required: true,
                                     })}
@@ -114,12 +87,14 @@ function CreateBlog() {
                                 <p className='validation_error'>{errors.title?.type === 'required' && "Title is required"}</p>
 
                                 <br />
+
                                 <Form.Label>Content</Form.Label>
                                 <Form.Control
                                     id="content"
                                     as="textarea"
                                     className='transparent-input'
                                     placeholder="Edit content here"
+                                    defaultValue={blog.content}
                                     style={{ height: '50em' }}
                                     {...register("content", { required: true })}
                                     onChange={handleChange}
@@ -130,26 +105,20 @@ function CreateBlog() {
                         </Row>
 
                         {/* <Form.Label>Image</Form.Label>
-                        <Form.Group variant="outline-dark" className="mb-3">
+                        <Form.Group variant="outline-dark" controlId="formFile" className="mb-3">
                             <Form.Control
-                                id="image"
                                 {...register("image")}
-                                type="file" className='transparent-input'
-                                onChange={handleChange}
-                            />
+                                type="file" className='transparent-input' />
                         </Form.Group>
                         <p className='validation_error'>{errors.image?.type === 'required' && "Image is required"}</p> */}
 
                         <ButtonGroup>
                             <Button
-                                name="drafts"
-                                onClick={() => onSubmit("drafts")}
+                                type='submit'
                                 variant="outline-dark">Save Draft</Button>
-                            <Button
-                                name="published"
-                                onClick={() => onSubmit("published")}
-                                variant="outline-dark" id="hot_pink_btn">Publish Blog!</Button>
+                            <Button variant="outline-dark" id="hot_pink_btn">Publish Blog!</Button>
                         </ButtonGroup>
+
                     </Form>
                 </Col>
 
@@ -162,4 +131,4 @@ function CreateBlog() {
     )
 }
 
-export default CreateBlog
+export default EditBlog
